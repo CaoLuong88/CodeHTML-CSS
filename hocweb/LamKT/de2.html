@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bootstrap Site</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+      integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+      integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="pl-5 pt-5 ml-5 h1">
+      Text & Checkbox
+      <hr class="w-50" />
+    </div>
+    <div class="pl-5 ml-5">
+      <label for="">Nhập vào họ và tên:</label>
+      <input
+        type="text"
+        id="ten"
+        class="btn-block w-50 form-control"
+        placeholder="Nhập họ và tên"
+      />
+      <div class="mt-3">
+        <div class="d-inline">
+          <input
+            id="tienganh"
+            type="checkbox"
+            class="shadow"
+            style="width: 20px; height: 15px"
+            value="Tiếng Anh"
+          />
+          Tiếng Anh
+        </div>
+        <div class="d-inline-block ml-4">
+          <input
+            id="tiengtrung"
+            type="checkbox"
+            class="shadow"
+            style="width: 20px; height: 15px"
+            value="Tiếng Trung"
+          />
+          Tiếng Trung
+        </div>
+      </div>
+      <hr class="w-50" />
+    </div>
+    <input
+      type="button"
+      class="mt-2"
+      style="
+        margin-left: 95px;
+        color: white;
+        border-radius: 8px;
+        border: none;
+        background-color: blue;
+      "
+      onclick="laythongtin()"
+      value="Xem thông tin"
+    />
+    <script>
+      var hoten = document.getElementById("ten");
+      var monhoc1 = document.getElementById("tienganh");
+      var monhoc2 = document.getElementById("tiengtrung");
+      function laythongtin() {
+        if (hoten.value != "") {
+          if (monhoc1.checked == true && monhoc2.checked == false) {
+            alert("Họ tên:" + hoten.value + "\n" + "Môn học:" + monhoc1.value);
+          }
+          if (monhoc2.checked == true && monhoc1.checked == false) {
+            alert("Họ tên:" + hoten.value + "\n" + "Môn học:" + monhoc2.value);
+          }
+          if (monhoc1.checked == true && monhoc2.checked == true) {
+            alert(
+              "Họ tên:" +
+                hoten.value +
+                "\n" +
+                "Môn học:" +
+                monhoc1.value +
+                " và " +
+                monhoc2.value
+            );
+          }
+          if (monhoc1.checked == false && monhoc2.checked == false) {
+            alert("Họ tên: " + hoten.value + "\n" + "Môn học: chưa nhập");
+          }
+        }
+        if (hoten.value == "") {
+          if (monhoc1.checked == true && monhoc2.checked == false) {
+            alert("Họ tên:" + "chưa nhập" + "\n" + "Môn học:" + monhoc1.value);
+          }
+          if (monhoc2.checked == true && monhoc1.checked == false) {
+            alert("Họ tên:" + "chưa nhập" + "\n" + "Môn học:" + monhoc2.value);
+          }
+          if (monhoc1.checked == true && monhoc2.checked == true) {
+            alert(
+              "Họ tên: " +
+                "chưa nhập" +
+                "\n" +
+                "Môn học:" +
+                monhoc1.value +
+                " và " +
+                monhoc2.value
+            );
+          }
+          if (monhoc1.checked == false && monhoc2.checked == false) {
+            alert("Họ tên: chưa nhập" + "\n" + "Môn học: chưa nhập");
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

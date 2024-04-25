@@ -1,0 +1,31 @@
+html{
+    background-image: url(https://vietnamhoc.net/wp-content/uploads/2019/09/viet-nam-hoc-truyen-kieu-1-800x480.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    line-height: 25px;
+}
+#kho1{
+    float: left;
+    background: rgba(243, 243, 240, 0.616) ;
+    border: 2px solid rgb(255, 166, 0);
+    margin-right: 10px;
+}
+#kho2{
+    float: left;
+  
+    background: rgba(0, 0, 0, 0.5);
+    color: rgb(0, 255, 13);
+    border: 2px dashed rgb(25, 0, 248);
+    margin-right: 10px;
+}
+#kho3{
+    background: rgba(73, 6, 6, 0.5);
+    color: rgb(215, 213, 216);
+    float:left;
+    border: 2px dashed rgb(25, 0, 248);
+    width: 300px;
+}
+#kho1 p, #kho2 p, #kho3 p{
+    margin-left: 10px;
+    margin-right: 5px;
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <title>Học javascript</title>
+
+</head>
+
+<body>
+    <div class="container-fluid">
+        <h4>Bài 06: Các kiểu dữ liệu cơ bản trong JavaScript</h4>
+        <hr>
+        <p> JavaScript có 8 kiểu dữ liệu cơ bản, trong đó, có 7 kiểu dữ liệu nguyên thủy (<b>boolean, null, undefined,
+                number, BigInt, string, symbol</b>)
+            và 1 kiểu dữ liệu dạng tham chiếu (<b>object</b>).</p>
+        <ul>
+            <li><b>Kiểu dữ liệu boolean:</b> bao gồm hai giá trị true và false dùng để biểu diễn đúng và sai.</li>
+            <li><b>Kiểu dữ liệu null:</b> chỉ gồm một giá trị null, dùng để biểu thị trạng thái không biết giá trị.</li>
+            <li><b>Kiểu dữ liệu undefined:</b> chỉ gồm một giá trị undefined, dùng để biểu thị trạng thái chưa gán giá trị.
+            </li>
+            <li><b>Kiểu dữ liệu number:</b> dùng để biểu diễn số nguyên hoặc số thực. Trong đó, số nguyên giới hạn trong đoạn
+                ±(253-1).</li>
+            <li><b>Kiểu dữ liệu BigInt:</b> dùng để biểu diễn số nguyên lớn, có độ dài tùy ý. Để biểu diễn số thuộc kiểu
+                BigInt, bạn chỉ cần thêm chữ cái n ở cuối.</li>
+            <li><b>Kiểu dữ liệu string:</b> dùng để biểu diễn kí tự, chuỗi ký tự,... bằng cách sử dụng dấu nháy đơn ('), nháy
+                kép (") hoặc dấu "backtick" (`). Mỗi string có thể chứa một kí tự, nhiều kí tự hoặc không chứa kí tự nào
+                (empty string).
+            </li>
+            <li><b>Kiểu dữ liệu symbol:</b> dùng để tạo ra những giá trị duy nhất, thường dùng làm "key" cho object.</li>
+            <li><b>Kiểu dữ liệu object:</b> là tập hợp của các cập key-value.</li>
+           
+        </ul>
+        <p>Để kiểm tra kiểu dữ liệu của một biến, bạn có thể sử dụng typeof.</p>
+        <ul>
+            <li> Có hai dạng: dạng toán tử typeof x hoặc ở dạng hàm typeof(x).</li>
+            <li> Kết quả trả về là một string ứng với tên của kiểu dữ liệu.</li>
+            <li> typeof null trả về object. Đây là một lỗi sơ khai của JavaScript. Thực chất, null không phải là object.
+            </li>
+        </ul>
+    </div>
+
+    <script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>

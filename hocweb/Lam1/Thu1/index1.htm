@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Quản lý Sinh viên</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css">
+    <style>
+        /* Định dạng CSS tùy chỉnh có thể được thêm vào đây */
+        .container {
+            margin-top: 50px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        #studentTable {
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Quản lý Sinh viên</h1>
+
+        <form id="studentForm">
+            <div class="mb-3">
+                <label for="txtMaSinhVien" class="form-label">Mã sinh viên</label>
+                <input type="text" class="form-control" id="txtMaSinhVien" required>
+            </div>
+            <div class="mb-3">
+                <label for="txtHoTen" class="form-label">Họ tên</label>
+                <input type="text" class="form-control" id="txtHoTen" required>
+            </div>
+            <!-- Thêm các trường nhập liệu khác -->
+
+            <button type="submit" class="btn btn-primary">Thêm sinh viên</button>
+        </form>
+
+        <table id="studentTable" class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Mã sinh viên</th>
+                    <th>Họ tên</th>
+                    <th>Ngày sinh</th>
+                    <th>Giới tính</th>
+                    <th>Lớp</th>
+                    <th colspan="2">Thao tác</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Dữ liệu sinh viên được tạo từ JavaScript sẽ được hiển thị ở đây -->
+            </tbody>
+        </table>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/js/bootstrap.bundle.min.js"></script>
+    <script src="student.js"></script>
+    <script>
+        // Sử dụng JavaScript và jQuery để thêm, hiển thị, và xóa dữ liệu sinh viên
+        $(document).ready(function () {
+            var studentForm = $('#studentForm');
+            var studentTable = $('#studentTable tbody');
+
+            // Hiển thị dữ liệu sinh viên khi trang được tải
+            for (var i = 0; i < students.length; i++) {
+                var student = students[i];
+                var row = $('<tr>');
+                row.append($('<td>').text(student.ID));
+                row.append($('<td>').text(student.MaSinhVien));
+                row.append($('<td>').text(student.HoTen));
+                row.append($('<td>').text(student.NgaySinh));
+                row.append($('<td>').text(student.GioiTinh));
+                row.append($('<td>').text(student.Lop));
+                row.append($('<td>').html('<button type="button" class="btn btn-danger btn-sm deleteBtn">Xóa</button>'));
+                row.append($('<td>').html('<button type="button" class="btn btn-danger btn-sm editBtn">Sửa</button>'));
+
+                studentTable.append(row);
+            }
+
+            // Thêm sinh viên khi form được gửi đi
+            studentForm.submit(function (event) {
+                event.preventDefault();
+
+                var maSinhVien = $('#txtMaSinhVien').val();
+                var hoTen = $('#txtHoTen').val();
+                // Lấy giá trị của các trường nhập liệu khác
+
+                var id = students.length + 1; // ID mới
+                addStudent(id, maSinhVien, hoTen, '', '', ''); // Thêm sinh viên vào mảng
+
+                // Hiển thị sinh viên mới trong bảng
+                var newRow = $('<tr>');
+                newRow.append($('<td>').text(id));
+                newRow.append($('<td>').text(maSinhVien));
+                newRow.append($('<td>').text(hoTen));
+                newRow.append($('<td>').text(''));
+                newRow.append($('<td>').text(''));
+                newRow.append($('<td>').text(''));
+                newRow.append($('<td>').html('<button type="button" class="btn btn-danger btn-sm deleteBtn">Xóa</button>'));
+                newRow.append($('<td>').html('<button type="button" class="btn btn-danger btn-sm editBtn">Sửa</button>'));
+
+                studentTable.append(newRow);
+
+                // Xóa giá trị trong các trường nhập liệu
+                $('#txtMaSinhVien').val('');
+                $('#txtHoTen').val('');
+                // Xóa giá trị trong các trường nhập liệu khác
+
+                // Gắn sự kiện click cho nút xóa sinh viên
+                $('.deleteBtn').click(function () {
+                    $(this).closest('tr').remove();
+                    // Xử lý xóa sinh viên trong mảng students ở đây
+
+                });
+
+                //  Gắn sự kiện click cho nút sửa sinh viên
+                $('.editBtn').click(function () {
+                    var row = $(this).closest('tr');
+                    var id = parseInt(row.find('td:first').text());
+                    var student = students.find(function (student) {
+                        return student.ID === id;
+                    });
+                    if (student) {
+                        // Hiển thị dữ liệu sinh viên trong form sửa
+                        $('#txtMaSinhVien').val(student.MaSinhVien);
+                        $('#txtHoTen').val(student.HoTen);
+                        // Đặt giá trị cho các trường nhập liệu khác
+
+                        // Xóa sinh viên khỏi mảng students
+                        deleteStudent(id);
+                        row.remove(); // Xóa hàng trong bảng
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

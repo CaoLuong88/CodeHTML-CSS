@@ -1,0 +1,17 @@
+#menu ul{
+    width: 200px;
+    font-size: 20px;
+    list-style:none;
+    background-color: green;
+}
+#menu ul li{
+    border-bottom: solid 1px black;
+    position: relative;
+}
+#menu li{
+    line-height: 1line;
+}
+#menu li a{
+    text-decoration: none;
+    display: block;
+}

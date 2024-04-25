@@ -1,0 +1,24 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: sans-serif;
+}
+/* menu */
+#menu ul{
+    list-style-type: none; /* xóa chấm */
+    background-color: cyan; 
+    text-align: center;
+}
+#menu ul li{
+    color: blue;
+    display: inline-table; /* căn hàng ngnag */
+    width: 120px;
+    height: 40px;
+    line-height: 40px; /* căn giữa dòng */
+}
+#menu ul li:hover{
+    background-color: blue;
+    color: aliceblue;
+}

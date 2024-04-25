@@ -1,0 +1,13 @@
+h1{ 
+    color: rgb(0, 255, 0);
+}
+h2{
+    color: pink;
+}
+p{
+    color: blue;
+}
+span{
+    background-color: yellow;
+    font-weight: 800;
+}

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Table</title>
+    <style>
+    h2{
+        margin: 0;
+    }
+    table, td, th{
+        border: 1px solid rgb(165, 8, 8);
+        border-collapse: collapse;
+    }
+    h2{
+        position: relative;
+        left: 80px;
+    }
+    #C1, #C2, #C3, #C4, #GT{
+        background-color: rgb(0, 255, 0);
+    }
+    #C1{
+        width: 150px;
+        
+    }
+    #C2{
+        width: 100px;
+    }
+    #C3{
+        width: 50px;
+    }
+    #C4{
+        width: 90px;
+    }
+    th, td{
+        text-align: center;
+    }
+    .name{
+        text-align: left;
+    }
+
+</style>
+</head>
+
+<body>
+    <div id="table">
+        <h2>KẾT QUẢ HỌC TẬP</h2>
+        <table>
+            <tr>
+                <th rowspan="2" id="C1">Họ và tên <br> học sinh</th>
+                <th colspan="2" id="C2">Năm sinh</th>
+                <th rowspan="2" id="C3">Điểm <br> TB</th>
+                <th rowspan="2" id="C4">Xếp Loại</th>
+            </tr>
+            <tr>
+                <td id="GT">Nam</td>
+                <td id="GT">Nữ</td>
+            </tr>
+            <tr>
+                <td class="name">Lê Thanh Xuân</td>
+                <td></td>
+                <td>1950</td>
+                <td>8.5</td>
+                <td>Giỏi</td>
+            </tr>
+            <tr>
+                <td class="name">Phan Thế Hạ</td>
+                <td>1985</td>
+                <td></td>
+                <td>6.5</td>
+                <td>Khá</td>
+            </tr>
+            <tr>
+                <td class="name">Trần Hoài Thu</td>
+                <td></td>
+                <td>1986</td>
+                <td>9.5</td>
+                <td>Xuất xắc</td>
+            </tr>
+            <tr>
+                <td class="name">Trương Thu Đông</td>
+                <td>1984</td>
+                <td></td>
+                <td>6.0</td>
+                <td>Trung Bình</td>
+            </tr>
+            <tr>
+                <td class="name">Lưu Thế Mạc</td>
+                <td>1985</td>
+                <td></td>
+                <td>4.5</td>
+                <td>kém</td>
+            </tr>
+            <tr>
+                <td style="background-color: rgb(0, 255, 0);" colspan="3">Tổng số học sinh đạt</td>
+                <td style="background-color: rgb(0, 255, 0);" colspan="2">4 Học sinh</td>
+            </tr>
+        </table>
+    </div>
+    
+</body>
+</html>

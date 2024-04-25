@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bai8</title>
+
+</head>
+<body>
+    <div class="row">
+        <div class="col-sm-4">
+            <h5 id="h5_tieuDe"> </h5>
+            <hr>
+            <label for="txt_hoTen" id="lb_hoTen"></label>
+            <input type="text" id="txt_hoTen" name="txt_hoTen" class="form-control">
+            <label for="txt_email" id="lb_email"></label>
+            <input type="text" id="txt_email" name="txt_email" class="form-control" >
+        </div>
+    </div>    
+    <script type="text/javascript">
+        // gán text:
+        document.getElementById("h5_tieuDe").innerText = "Ví dụ về: document.getElementById:";
+        // gán style:
+        document.getElementById("h5_tieuDe").style.color = "Red";
+        // gán text cho thẻ lable:
+        document.getElementById("lb_hoTen").innerHTML = "Họ và tên:";
+        // gán textcho input text:
+        document.getElementById("txt_hoTen").value = "Hoàng Việt Anh";
+        // gán text cho thẻ lable:
+        document.getElementById("lb_email").innerText = "Email:";
+        // gán placeholder cho input text:
+        document.getElementById("txt_email").placeholder = "Nhập Email..."
+    </script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+body{
+    font-family: sans-serif;
+    font-size: 14px;
+}
+h1{
+    color: #30f;
+}
+h2{
+    color: #f60;
+    text-decoration: underline;
+}
+p{
+    color: green;
+}

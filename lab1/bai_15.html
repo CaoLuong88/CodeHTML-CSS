@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>bảng đăng ký</title>
+    <style>
+    table{
+        border: 1px solid black;
+    }
+    #end{
+        text-align: center;
+    }
+    #live{
+        width: 100px;
+        height: 50px;
+    }
+    
+</style>
+</head>
+
+<body>
+    <div id="table">
+        <form>
+            <table>
+                <tr>
+                    <th colspan="2">ĐĂNG KÝ THÀNH VIÊN</th>
+                </tr>
+                <tr>
+                    <td colspan="2">THÔNG TIN TÀI KHOẢN </td>
+                </tr>
+                <tr>
+                    <td>username:</td>
+                    <td><input type="text"> </td>
+                    
+                </tr>
+                <tr>
+                    <td>Passworld:</td>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <td>Nhập lại password: </td>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <td colspan="2">THÔNG TIN CÁ NHÂN</td>
+                </tr>
+                <tr>
+                    <td>Họ và tên: </td>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <td>Giới tính:</td>
+                    <td>
+                       <select>
+                            <option>Nam</option>
+                            <option>Nữ</option>
+                        </select> 
+                    </td>
+                </tr>
+                <tr>
+                    <td>Địa chỉ: </td>
+                    <td><input id="live" type="text"></td>
+                </tr>
+                <tr>
+                    <td>Ngày sinh: </td>
+                    <td><input type="datetime" placeholder="dd/mm/yyyy"></td>
+                </tr>
+                <tr>
+                    <td>Email: </td>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <td>Tình trạng hôn nhân</td>
+                    <td>
+                        <input type="radio" name="1">độc thân
+                        <input type="radio" name="1">đã đính hôn
+                        <br>
+                        <input type="radio" class="right" name="1">ly dị
+                        <input type="radio" class="right" name="1">quá phụ
+                    </td>
+                </tr>
+                <tr id="end">
+                    <td colspan="2">
+                        <button>Gửi đi</button>
+                        <button>Nhập lại</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+        
+    </div>
+</body>
+</html>

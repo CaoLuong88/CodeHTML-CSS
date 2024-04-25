@@ -1,0 +1,12 @@
+body{
+    font-family: 'Consolas';
+    background-color: bisque;
+}
+.table ,th,td{
+    padding: 50px;
+    border: 100px solid rgb(red, green, blue);
+
+}
+th{
+    background-color: aqua;
+}

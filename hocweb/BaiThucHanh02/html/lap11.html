@@ -1,0 +1,86 @@
+<html>
+
+<head>
+    <title> bai 7</title>
+    <link rel="stylesheet" href="/css/bai7.css">
+    <style>
+        #table1 {
+            border-collapse: collapse
+        }
+    </style>
+</head>
+
+<body>
+    <table border="1" id="table1" align="center">
+        <tr>
+            <th colspan="2"> Các điền khiển cơ bản với form</th>
+        </tr>
+        <tr>
+
+            <th colspan="2"> nhap thong tin</th>
+        </tr>
+        <tr>
+            <td>Ho ten</td>
+            <td><input type="textbox" id="tb_ht" placeholder="nhap"></td>
+
+        </tr>
+        <tr>
+            <td> gioi tinh</td>
+            <td> <input type="radio" id="rd_nam" checked name="rd_gt">Nam
+                <input type="radio" id="rd_nu" name="rd_gt">Nu 
+            </td>
+        </tr>
+        <tr>
+            <td> ngay sinh</td>
+            <td>
+                <select name="day">
+                    <option  > Ngay 1</option>
+                    <option > ngay 2</option>
+                    <option value="ngay1"> ngay 3</option>
+
+                </select>
+                <select name="month">
+                    <option value="thang1"> Thang 1</option>
+                    <option value="ngay1"> Thang 2</option>
+                </select>
+                <select name="year">
+                    <option value="nam2022"> Nam 2022</option>
+
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                khoa dang ky
+            </td>
+            <td>
+                <input type="checkbox" id="cb_ta">Tieng anh
+                <input type="checkbox" id="cb_tt">Tieng trung
+            </td>
+
+        </tr>
+        <tr>
+            <td> Chon hoc ky</td>
+            <td>
+                <select name="hocky">
+                    <option value="hocphan">Dang ky hoc phan</option>
+                    <option value="hocphan"> hoc phan 1</option>
+
+
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>ghi chu</td>
+            <td> <textarea name="" id="" cols="20" rows="5"></textarea> </td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center">
+                <input type="reset" name="reset" value="Reset">
+                <input type="submit" name="ok" value="Ok">
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <title>JavaScript HTML DOM Document</title>
+
+</head>
+
+<body>
+    <div class="container-fluid">
+        <h4>Bài 08: JavaScript - Phương thức DOM HTML</h4>
+        <hr>
+        <div class="row">
+            <div class="col-sm-4">
+                <h5 id="h5_tieuDe"></h5>
+                <hr>
+                <label for="txt_hoTen" id="lb_hoTen"></label>
+                <input type="text" id="txt_hoTen" name="txt_hoTen" class="form-control">
+                <label for="txt_email" id="lb_email"></label>
+                <input type="text" id="txt_email" name="txt_email" class="form-control">
+            </div>
+        </div>
+        <hr>
+        <p>Tham khảo mã nguồn:</p>
+        <code style="color: black; font-size:large; font-family: Consolas !important;">
+            <pre>
+    &lt;div class="row"&gt;
+        &lt;div class="col-sm-4"&gt;
+            &lt;h5 id="h5_tieuDe"&gt; &lt;/h5&gt;
+            &lt;hr&gt;
+            &lt;label for="txt_hoTen" id="lb_hoTen"&gt;&lt;/label&gt;
+            &lt;input type="text" id="txt_hoTen" name="txt_hoTen" class="form-control"&gt;
+            &lt;label for="txt_email" id="lb_email"&gt;&lt;/label&gt;
+            &lt;input type="text" id="txt_email" name="txt_email" class="form-control" &gt;
+        &lt;/div&gt;
+    &lt;/div&gt;    
+    &lt;script type="text/javascript"&gt;
+        // gán text:
+        document.getElementById("h5_tieuDe").innerText = "Ví dụ về: document.getElementById:";
+        // gán style:
+        document.getElementById("h5_tieuDe").style.color = "Red";
+        // gán text cho thẻ lable:
+        document.getElementById("lb_hoTen").innerHTML = "Họ và tên:";
+        // gán textcho input text:
+        document.getElementById("txt_hoTen").value = "Hoàng Việt Anh";
+        // gán text cho thẻ lable:
+        document.getElementById("lb_email").innerText = "Email:";
+        // gán placeholder cho input text:
+        document.getElementById("txt_email").placeholder = "Nhập Email..."
+    &lt;/script&gt;</pre></code>
+        <p style="color: red;">Mở Developer Tools bằng F12 (hoặc click vào dấu 3 chấm phía trên bên phải => More Tools
+            => Developer Tools).
+        </p>
+    </div>
+    <script type="text/javascript">
+        // gán text: cho thẻ h5 :(setter)
+        document.getElementById("h5_tieuDe").innerText = "Ví dụ về: document.getElementById";
+          // gán style: cho thẻ h5 text: (setter)
+        document.getElementById("h5_tieuDe").style.color = "Red";
+        // gán text cho thẻ lable: (setter)
+        document.getElementById("lb_hoTen").innerHTML = "Họ và tên:";
+        // gán text cho input text: (setter)
+        document.getElementById("txt_hoTen").value = "Hoàng Việt Anh";
+        // gán text cho thẻ lable: (setter)
+        document.getElementById("lb_email").innerText = "Email:";
+        // gán placeholder cho input text: (setter)
+        document.getElementById("txt_email").placeholder = "Nhập Email...";
+        // getter
+        let useHoTen =  document.getElementById("txt_hoTen").value;
+        let label_Email =  document.getElementById("lb_email").innerHTML;
+        console.log(useHoTen);
+        console.log(label_Email);
+    </script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>

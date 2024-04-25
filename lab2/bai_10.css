@@ -1,0 +1,19 @@
+.tin_tuc{
+    width: 500px;
+    border: 1px solid red;
+    height: auto;
+}
+h1{
+    margin-left: 5px;
+}
+div{
+    margin-left: 10px;
+    margin-right: 10px;
+    border-bottom: 1px solid rgba(0,0,0,0.5);
+    height: 175px;
+}
+img{
+    margin-right: 10px;
+    max-width: 200px;
+    float: left;
+}

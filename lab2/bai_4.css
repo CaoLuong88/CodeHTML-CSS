@@ -1,0 +1,9 @@
+div{
+    background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxLAeWGDxNU9IuiH8oUmE-q1sYVnr31e0MRw&usqp=CAU);
+    border: 1px solid black;
+    width: 300px;
+}
+h3, p{
+    margin: 0;
+    padding: 0 2px;
+}

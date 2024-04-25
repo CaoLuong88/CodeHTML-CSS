@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <title>JavaScript HTML DOM Document</title>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <h4>Bài 09: javascript - Viết hàm và cách gọi hàm </h4>
+        <hr>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <input type="button" value="Show log" class="btn btn-primary" onclick="hello_show_log()">
+                <input type="button" value="Show alert" class="btn btn-success" onclick="hello_show_alert()">
+                <input type="button" value="Show confirm" class="btn btn-danger" onclick="hello_show_confirm()">
+                <input type="button" value="Change form" class="btn btn-secondary" onclick="change_formt()">
+                <a href="#" class="btn btn-primary">Button - Thẻ A </a>
+            </div>
+        </div>
+        <hr>
+        <h5>Tham khảo mã nguồn:</h5>
+        <code style="color: black; font-size:large; font-family: Consolas !important;">
+            <pre>
+        &lt;div class="row"&gt;
+            &lt;div class="col-sm-4"&gt;
+                &lt;input type="button" value="Show log" class="btn btn-primary" onclick="hello_show_log()"&gt;
+                &lt;input type="button" value="Show alert" class="btn btn-success" onclick="hello_show_alert()"&gt;
+                &lt;input type="button" value="Show confirm" class="btn btn-danger" onclick="hello_show_confirm()"&gt;   
+                &lt;input type="button" value="Change form" class="btn btn-secondary" onclick="change_formt()"&gt;
+                &lt;a href="#" class="btn btn-primary">Button - Thẻ A &lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+              
+        &lt;script type="text/javascript"&gt;
+            function hello_show_alert() {
+                alert("Xin chào");
+            }
+            function hello_show_confirm(){
+                confirm("Hello world");
+            }
+            function hello_show_log() {
+                console.log("Hello world");
+            }
+            function change_formt() {
+                document.location.href = "lab08.html"
+            }
+        &lt;/script&gt;</pre></code>        
+    </div>
+    <script type="text/javascript">
+        function change_formt() {
+            document.location.href = "lab08.html"
+        }
+        function hello_show_alert() {
+            alert("Xin chào");
+        }
+        function hello_show_confirm() {
+            confirm("Hello world");
+        }
+        function hello_show_log() {
+            console.log("Hello world");
+        }
+    </script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>

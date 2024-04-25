@@ -1,0 +1,16 @@
+#menu ul{
+    width: 200px;
+    font-size: 20px;
+}
+#menu ul li{
+    height: 2em;
+    background: rgb(88, 238, 74);
+    padding: 0 1em;
+    color: aliceblue;
+    margin-bottom: 2px;
+    line-height: 2em; /* căn giữa  */
+}
+
+#menu ul li:hover{   /* hiệu ứng đổi màu khi chi chuột */
+    background: rgb(0, 255, 21);
+}

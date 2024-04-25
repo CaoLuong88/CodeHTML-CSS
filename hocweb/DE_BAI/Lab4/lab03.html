@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <title>Học javascript</title>
+   
+</head>
+
+<body>
+    <div class="container-fluid">
+        <h4>Bài 03: Khai báo biến kiểu <b>let</b></h4>
+        <hr>
+        <h5>Tham khảo mã nguồn:</h5>
+        <code style="color: black; font-size:large; font-family: Consolas !important;">
+            <pre>
+        &lt;script type="text/javascript"&gt;
+            // ví dụ về khai báo kiểu let:	
+            let studentName_1 = "Hoàng Việt Anh";           
+            let check = 4
+            if (check > 3) {
+                let studentName_2 = "Lê Văn Trung";
+                console.log(studentName_1);
+                console.log(studentName_2);
+            }           
+            console.log("========================");
+            console.log(studentName_1);		
+            // let không cho phép tái cấu trúc nhưng vẫn cho phép thay đổi giá trị.
+            console.log("========================");
+            studentName_1 = "Trương Việt Hoàng";
+            console.log(studentName_1);
+            // 2 dòng lệnh phía dưới báo lỗi
+            console.log(studentName_2); 
+            //let studentName_1 = "Võ Hoàng Bửu";    
+        &lt;/script&gt;</pre></code>
+     
+    </div>   
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        // ví dụ về khai báo kiểu let - biến kiểu Protected
+        let studentName_1 = "Hoàng Việt Anh";		
+		let check = 4
+		if (check > 3) {
+			let studentName_2 = "Lê Văn Trung";
+			console.log(studentName_1);
+			console.log(studentName_2);
+		}
+		console.log("========================");
+		console.log(studentName_1);		
+        // let không cho phép tái cấu trúc nhưng vẫn cho phép thay đổi giá trị.
+        console.log("========================");
+        studentName_1 = "Trương Việt Hoàng";
+        console.log(studentName_1);
+        console.log(studentName_2);
+        //let studentName_1 = "Võ Hoàng Bửu";    
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+#pot1{
+    background: url(https://www.recit.net/wp-content/uploads/2019/02/Galaxy-x-prix-840x500.jpg);
+}
+#pot2{
+    background: url(https://cdn.thetealmango.com/wp-content/uploads/2022/02/samsung-galaxy-3d-side-touch-curved-display-all-around-screen-patent-first-look-1-1.jpg);
+}
+
+#pot1, #pot2{
+    margin-top: 10px;
+    width: 500px;
+    height: 320px;
+    border: 5px solid rgb(212, 124, 198);
+    background-size: cover;
+    position: relative;
+     /* Định vị trí tuyệt đối cho các thành phần, không gây ảnh hưởng tới vị trí ban đầu hay các thành phần khác. */
+}
+h2{
+     position: absolute; 
+     /* iá trị này sẽ giúp định vị trí tuyệt đối cho thành phần theo thành phần bao ngoài, hoặc ít nhất là theo cửa sổ trình duyệt. */
+    margin: 0px;
+    bottom: 0px;
+    background-color: rgba(212, 124, 198, 0.418);
+    width: 500px;
+    padding-bottom: 15px;
+    padding-top: 15px;
+}

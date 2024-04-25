@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Text & Table</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<script src="js/popper.min.js"></script>
+	<script src="js/bootstrap.min.js" type="javascript"></script>
+</head>
+
+<body>
+	<div class="container mt-3">
+		<div class="row">
+			<div class="col-8">
+				<h3>View in Table & Add, Update, Delete </h3>
+				<hr>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-3">
+				<div class="mb-3">
+					<label for="txtmasv">Nhập vào mã sinh viên:</label>
+					<input type="text" name="txtmasv" id="txtmasv" class="form-control" placeholder="Nhập mã sinh viên">
+				</div>
+				<hr>
+			</div>
+			<div class="col-4">
+				<div class="mb-3">
+					<label for="txthoten">Nhập vào họ và tên:</label>
+					<input type="text" name="txthoten" id="txthoten" class="form-control" placeholder="Nhập họ và tên">
+				</div>
+				<hr>
+			</div>
+			<div class="col-1">
+				<div class="mb-3">
+					<br>
+					<input type="button" name="add" id="bt_add_or_Update" class="btn btn-success" value="Thêm"
+						checkupdate="0" onclick="InsertItem()">
+				</div>
+				<hr>
+			</div>
+		</div>
+	
+		<div class="row">
+			<div class="col-8">
+				<hr>
+				<div class="mb-3">
+					<table class="table table-hover">
+						<thead>
+							<tr>
+								<th style="width: 50px;"><input type="checkbox" name="check_all" id="check_all"
+										class="form-check-input"></th>
+								<th style="width: 50px; text-align: center;">TT</th>
+								<th style="width: 150px;">Mã sinh viên</th>
+								<th>Họ và tên</th>
+								<th style="width: 90px;  text-align: center;"><a href="#"
+										style="text-decoration: none; text-align: center; color: rgb(0, 0, 0);">Sửa | Xóa</a></th>
+							</tr>
+						</thead>
+						<tbody id="tbodylist">
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		// khai báo đối tượng sinh vien
+		class _sinhvien {
+			constructor(masv, hovaten) {
+				this.masv = masv;
+				this.hovaten = hovaten;
+			}
+		}
+		// khai báo một số sinh viên mẫu
+		let sinhvien1 = new _sinhvien('2261030052', 'Đỗ Anh Đức');
+		let sinhvien2 = new _sinhvien('2161030068', 'Lê Hữu Đức');
+		let sinhvien3 = new _sinhvien('2261030044', 'Mai Văn Dung');
+		let sinhvien4 = new _sinhvien('2161030034', 'Tô Quang Linh');
+		let sinhvien5 = new _sinhvien('2261030063', 'Lê Xuân Long');
+		let sinhvien6 = new _sinhvien('2161030038', 'Cao Văn Lương');
+		let sinhvien7 = new _sinhvien('2261030064', 'Trần Thị Hồng Mai');
+
+		// khai báo 1 danh sách (Mảng)để chứa các sinh viên
+		let sinhviens = [];
+		// thêm phần tử vào danh sách
+		sinhviens.push(sinhvien1);
+		sinhviens.push(sinhvien2);
+		sinhviens.push(sinhvien3);
+		sinhviens.push(sinhvien4);
+		sinhviens.push(sinhvien5);
+		sinhviens.push(sinhvien6);
+		sinhviens.push(sinhvien7);
+		//console.log(sinhviens.length);
+		// hiển thị danh sách sinh viên vào table bằng cách gọi hàm
+		tbodylistshow();
+		// hàm hiển thị sinh viên vào table
+		function tbodylistshow() {
+			var out = "";
+			var i;
+			for (i = 0; i < sinhviens.length; i++) {
+				var _masv = "'" + sinhviens[i].masv + "'";
+
+				out += '<tr>' +
+					'<td><input type="checkbox" name="name[]" id="check' + (i + 1) + '" class="form-check-input"></td>' +
+					'<td style="text-align: center;" >' + (i + 1) + '</td>' +
+					'<td>' + sinhviens[i].masv + '</td>' +
+					'<td>' + sinhviens[i].hovaten + '</td>' +
+					'<td style="text-align: center;"><a href="#" style="text-decoration: none; color: rgb(0, 0, 0);" onclick="UpdateItem(' + _masv + ')" >Sửa</a> |' +
+					' <a onclick="DeleteItem(' + _masv + ')"  style="text-decoration: none; color: rgb(0, 0, 0);" href="#">Xóa</a></td>' +
+					'</tr>';
+			}
+			document.getElementById("tbodylist").innerHTML = out;
+		}
+		// hàm thêm 1 sinh viên vào danh sách
+		function InsertItem() {
+			// Lấy dữ liệu của các ô nhập
+			var _masv = document.getElementById("txtmasv").value;
+			var _txthoten = document.getElementById("txthoten").value;
+			// lấy dữ liệu name của button thêm
+			var _add_or_Update = document.getElementById("bt_add_or_Update");
+			var checkUpdate = _add_or_Update.name;
+			// nếu _add_or_Update.name == add => thực hiện thêm mới; nếu = mã sinh viên => thực hiện sửa
+			if (checkUpdate == "add") {
+				// thêm mới
+				// nếu nhập đầy đủ dữ liệu của 1 sinh viên thì thực hiện thêm
+				if (_masv.trim() != "" && _txthoten.trim() != "") {
+					let _sinhvien_new = new _sinhvien(_masv.trim(), _txthoten.trim());
+					sinhviens.push(_sinhvien_new);
+					// xóa dữ liệu tại 2 ô text
+					document.getElementById("txtmasv").value = "";
+					document.getElementById("txthoten").value = "";
+					// hiển thị lại dữ liệu mới
+					tbodylistshow();
+				}
+				else {
+					//xử lý lỗi chưa nhập dữ liệu tại đây
+					alert("Vui lòng nhập mã sinh viên và họ tên sinh viên");
+				}
+			}
+			else {
+				// Sửa dữ liệu
+				// nếu nhập đầy đủ dữ liệu của 1 sinh viên thì thực hiện thêm
+				if (_masv.trim() != "" && _txthoten.trim() != "") {
+
+					var sv_update = sinhviens.find(function (sinhvienx) {
+						return sinhvienx.masv == checkUpdate;
+					});
+
+					sv_update.hovaten = _txthoten.trim();
+					// đặt lại hiển thị cho button
+					document.getElementById("bt_add_or_Update").value = "Thêm";
+					document.getElementById("bt_add_or_Update").name = "add";
+					// xóa dữ liệu tại 2 ô text
+					document.getElementById("txtmasv").value = "";
+					document.getElementById("txthoten").value = "";
+					// hiển thị lại dữ liệu mới
+					tbodylistshow();
+				}
+				else {
+					//xử lý lỗi chưa nhập dữ liệu tại đây
+					alert("Vui lòng nhập mã sinh vien và họ tên sinh viên");
+				}
+
+			}
+		}
+		// hàm sửa thông tin  1 sinh viên trong danh sách
+		function UpdateItem(_masv) {
+			// tìm sinh viên có mã được truyền vào theo hàm
+
+			var sv_update = sinhviens.find(function (sinhvienx) {
+				return sinhvienx.masv == _masv;
+			});
+			// gán giá trị name cho button để đánh dấu là cập nhật hay thêm mới
+			document.getElementById("bt_add_or_Update").name = _masv;
+			// console.log(sv_update)
+			document.getElementById("txtmasv").value = sv_update.masv;
+			document.getElementById("txthoten").value = sv_update.hovaten;
+			document.getElementById("bt_add_or_Update").value = "Cập nhật";
+		}
+		// hàm xóa 1 sinh viên ở vị trí nào đó
+		function DeleteItem(_masv) {
+			//tìm vị trí của sinh viên có mã sinh viên cần xóa được truyền vào từ lời gọi hàm
+			var index_sv_delete = sinhviens.findIndex(function (sinhvienx) {
+				return sinhvienx.masv == _masv;
+			});
+			//	console.log(index_sv_delete);
+			var result = confirm("Bạn chắc chắn xóa dữ liệu này?");
+			if (result) {
+
+				// Xóa sinh viên tại vị trí được tìm thấy trong mảng
+				sinhviens.splice(index_sv_delete, 1);
+				// Cập nhật lại dữ liệu cho bảng		
+				tbodylistshow();
+			}
+		}
+		// xử lý checkboxs
+		var chks = document.getElementsByName("name[]");
+		for (var i = 0; i < chks.length; i++)
+			chks[i].onchange = function () {
+				if (this.checked) {
+					this.parentNode.parentNode.style.backgroundColor = "silver";
+					var c = document.getElementsByName("name[]");
+					var j = 0;
+					for (j = 0; j < c.length; j++)
+						if (!c[j].checked) {
+							document.getElementById("check_all").checked = false;
+							break;
+						}
+					if (j == c.length) document.getElementById("check_all").checked = true;
+				}
+				else {
+					document.getElementById("check_all").checked = false;
+					this.parentNode.parentNode.style.backgroundColor = "white";
+				}
+			};
+		document.getElementById("check_all").onchange = function () {
+			var c = document.getElementsByName("name[]");
+			for (var j = 0; j < c.length; j++) {
+				c[j].checked = this.checked;
+				if (c[j].checked)
+					c[j].parentNode.parentNode.style.backgroundColor = "silver";
+				else
+					c[j].parentNode.parentNode.style.backgroundColor = "white";
+			}
+
+		};
+
+	</script>
+</body>
+
+</html>

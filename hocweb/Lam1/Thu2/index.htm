@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Quản lý Sinh viên</title>
+    <link rel="stylesheet" href="Thu2/styles.css">
+</head>
+<body>
+    <h1>Quản lý Sinh viên</h1>
+    
+    <div class="container">
+        <form id="studentForm">
+            <div>
+                <label for="txtMaSinhVien">Mã sinh viên:</label>
+                <input type="text" id="txtMaSinhVien" required>
+            </div>
+            <div>
+                <label for="txtHoTen">Họ và tên:</label>
+                <input type="text" id="txtHoTen" required>
+            </div>
+            <div>
+                <label for="txtNgaySinh">Ngày sinh:</label>
+                <input type="date" id="txtNgaySinh" required>
+            </div>
+            <div>
+                <label for="selGioiTinh">Giới tính:</label>
+                <select id="selGioiTinh" required>
+                    <option value="Nam">Nam</option>
+                    <option value="Nữ">Nữ</option>
+                </select>
+            </div>
+            <div>
+                <label for="txtLop">Lớp:</label>
+                <input type="text" id="txtLop" required>
+            </div>
+            <div>
+                <button type="button" onclick="addStudent()">Thêm sinh viên</button>
+            </div>
+        </form>
+    </div>
+    
+    <div class="container">
+        <table id="studentTable">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Mã sinh viên</th>
+                    <th>Họ và tên</th>
+                    <th>Ngày sinh</th>
+                    <th>Giới tính</th>
+                    <th>Lớp</th>
+                    <th>Thao tác</th>
+                </tr>
+            </thead>
+            <tbody id="studentTableBody"></tbody>
+        </table>
+    </div>
+    
+    <script src="Thu2/data.js"></script>
+    <script src="Thu2/script.js"></script>
+    <script src=""></script>
+</body>
+</html>

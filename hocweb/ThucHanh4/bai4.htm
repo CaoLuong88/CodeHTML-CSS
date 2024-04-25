@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bai 4</title>
+    <script type="text/javascript">
+        // ví dụ về khai báo kiểu const - biến kiểu private	
+        const studentName_1 = "Hoàng Việt Anh";
+       
+        console.log(studentName_1);
+        // dòng lệnh này báo lỗi
+        // studentName_1 = "Trương Việt Hoàng"
+        console.log("========================");
+        // khai báo kiểu object để có thể thay đổi giá trị:
+        const student = {
+            student_code: "2161030138",
+            student_Name: "Hoàng Việt Anh"
+        }
+        console.log(student);
+        console.log("========================");
+        student.student_code = "2161030139";
+        student.student_Name = "Trương Việt Hoàng";
+        console.log(student);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

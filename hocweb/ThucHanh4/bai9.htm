@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bai 9</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+    <div class="row">
+        <div class="col-sm-4">
+            <input type="button" value="Show log" class="btn btn-primary" onclick="hello_show_log()">
+            <input type="button" value="Show alert" class="btn btn-success" onclick="hello_show_alert()">
+            <input type="button" value="Show confirm" class="btn btn-danger" onclick="hello_show_confirm()">   
+            <input type="button" value="Change form" class="btn btn-secondary" onclick="change_formt()">
+            <a href="#" class="btn btn-primary">Button - Thẻ A </a>
+        </div>
+    </div>
+          
+    <script type="text/javascript">
+        function hello_show_alert() {
+            alert("Xin chào");
+        }
+        function hello_show_confirm(){
+            confirm("Hello world");
+        }
+        function hello_show_log() {
+            console.log("Hello world");
+        }
+        function change_formt() {
+            document.location.href = "bai8.htm"
+        }
+    </script>
+</body>
+</html>

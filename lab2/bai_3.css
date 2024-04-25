@@ -1,0 +1,17 @@
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+}
+p{
+    color: rgb(32, 0, 240);
+}
+sup, i{
+    color: rgb(241, 123, 143);
+}
+span{
+    color: #339900;
+    font-size: 18px;
+}
+u{
+    color: red;
+}
